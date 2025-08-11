@@ -17,7 +17,7 @@ defmodule AidaWeb.Router do
   scope "/", AidaWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", Index, :index
   end
 
   # Other scopes may use custom stacks.
