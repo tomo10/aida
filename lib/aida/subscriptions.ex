@@ -27,7 +27,7 @@ defmodule Aida.Subscriptions do
         %Detail{}
         |> Detail.changeset(Map.put(detail, :item_id, item.id))
 
-      {:ok, det} = Repo.insert(det_changes)
+      {:ok, _det} = Repo.insert(det_changes)
 
       Repo.preload(item, :subscription_detail)
     end)

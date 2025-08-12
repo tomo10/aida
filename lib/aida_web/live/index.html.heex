@@ -1,34 +1,22 @@
-<div id="due-queue" class="p-6 max-w-lg mx-auto">
-  <%= if @current do %>
-    <div class="card shadow-lg bg-base-100">
-      <div class="card-body">
-        <h2 class="card-title text-lg font-bold">{@current.title}</h2>
-        <p class="text-gray-600 whitespace-pre-line">{@current.content}</p>
-
-        <div class="mt-6 flex flex-col gap-2">
-          <button phx-click="grade" phx-value-grade="0" class="btn btn-error w-full">
-            1 — Again
-          </button>
-          <button phx-click="grade" phx-value-grade="1" class="btn btn-warning w-full">
-            2 — Hard
-          </button>
-          <button phx-click="grade" phx-value-grade="2" class="btn btn-info w-full">
-            3 — Good
-          </button>
-          <button phx-click="grade" phx-value-grade="3" class="btn btn-success w-full">
-            4 — Easy
-          </button>
+<div class="p-8 max-w-4xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">Explore</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <.link navigate={~p"/subscriptions"} class="no-underline">
+      <div class="card bg-base-100 shadow hover:shadow-lg transition rounded-xl">
+        <div class="card-body">
+          <h2 class="card-title">Subscriptions</h2>
+          <p class="opacity-80">Manage recurring subscriptions and reminders.</p>
         </div>
-
-        <p class="mt-4 text-sm opacity-70">
-          Card {@idx + 1} / {length(@due)}
-        </p>
       </div>
-    </div>
-  <% else %>
-    <div class="text-center">
-      <h2 class="text-2xl font-bold mb-2">🎉 No items due</h2>
-      <p class="opacity-70">Check back later.</p>
-    </div>
-  <% end %>
+    </.link>
+
+    <.link navigate={~p"/items"} class="no-underline">
+      <div class="card bg-base-100 shadow hover:shadow-lg transition rounded-xl">
+        <div class="card-body">
+          <h2 class="card-title">Items</h2>
+          <p class="opacity-80">Study language/phrases due for review.</p>
+        </div>
+      </div>
+    </.link>
+  </div>
 </div>

@@ -18,6 +18,8 @@ defmodule AidaWeb.Router do
     pipe_through :browser
 
     live "/", Index, :index
+    live "/subscriptions", SubscriptionsLive.Index, :index
+    live "/items", LanguageLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
