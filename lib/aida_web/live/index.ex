@@ -11,11 +11,12 @@ defmodule AidaWeb.Index do
   defp load_due(socket) do
     # all kinds for now
     due = KB.due_items(%{})
+    KB.list_items() |> dbg()
     assign(socket, due: due, current: List.first(due), idx: 0)
   end
 
   @impl true
-  def handle_event("grade", %{"grade" => g}, %{assigns: %{current: nil}} = socket) do
+  def handle_event("grade", %{"grade" => _g}, %{assigns: %{current: nil}} = socket) do
     {:noreply, socket}
   end
 

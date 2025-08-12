@@ -10,10 +10,10 @@ defmodule Aida.Repo.Migrations.CreateItems do
       add :first_seen, :date
       add :last_review, :date
       add :next_review, :date
-      add :reps, :integer
-      add :lapses, :integer
-      add :interval_days, :integer
-      add :ease, :float
+      add :reps, :integer, default: 0, null: false
+      add :lapses, :integer, default: 0, null: false
+      add :interval_days, :integer, default: 0, null: false
+      add :ease, :float, default: 2.5, null: false
 
       timestamps(type: :utc_datetime)
     end
